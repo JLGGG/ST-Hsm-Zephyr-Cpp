@@ -1,0 +1,10 @@
+.settings
+.cproject
+.mxproject
+.project
+ST-Hsm-Zephyr-Cpp Debug.*
+ST-Hsm-Zephyr-Cpp.ioc
+STM32F407VGTX_FLASH.ld
+STM32F407VGTX_RAM.ld
+
+Debug
