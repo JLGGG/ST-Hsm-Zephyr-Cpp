@@ -22,6 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "cmox_crypto.h"
+
+#include "hsm_memory_protection.h"
+
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -149,7 +152,9 @@ int main(void)
   {
       Error_Handler();
   }
-   HAL_UART_Transmit(&huart2, (uint8_t *)Computed_Ciphertext, computed_size, HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, (uint8_t *)Computed_Ciphertext, computed_size, HAL_MAX_DELAY);
+
+  setRDPLevelOne();
   /* USER CODE END 2 */
 
   /* Infinite loop */
