@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "cmox_crypto.h"
 
-#include "hsm_memory_protection.h"
+#include "hsm_option_byte.h"
 
 #include <string.h>
 /* USER CODE END Includes */
@@ -154,7 +154,8 @@ int main(void)
   }
   HAL_UART_Transmit(&huart2, (uint8_t *)Computed_Ciphertext, computed_size, HAL_MAX_DELAY);
 
-  setRDPLevelOne();
+  // setRDPLevelOne();
+  setBORLevelThree();
   /* USER CODE END 2 */
 
   /* Infinite loop */
