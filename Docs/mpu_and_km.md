@@ -16,17 +16,12 @@ This document outlines the key features and implementation roadmap for memory pr
 - Block write/erase operations on protected sectors.
 - Monitor error flags (`WRPERR`) for protection violations.
 
-### 3. Proprietary Code Read-Out Protection (PCROP)
-- Enable PCROP for key handling code sections.
-- Allow I-code execution while blocking D-bus read/write access.
-- Check error flags: `RDERR` for reads, `WRPERR` for writes.
-
-### 4. One-Time Programmable Memory (OTP)
+### 3. One-Time Programmable Memory (OTP)
 - Program secure data to OTP blocks.
 - Configure `LOCKBi` bits to permanently lock data.
 - Prevent overwriting once locked; verify persistence across resets.
 
-### 5. Key Management (KM)
+### 4. Key Management (KM)
 - Determine secure key storage location (OTP or protected Flash).
 - Implement:
   - Key write and read functions
@@ -35,7 +30,7 @@ This document outlines the key features and implementation roadmap for memory pr
   - Secure key erase/rollback handling
 - Validate key lifecycle management in secure environment.
 
-### 6. Error Handling & Recovery
+### 5. Error Handling & Recovery
 - Detect access violations via protection flags.
 - Provide fallback logic for decryption/key validation failures.
 - Integrate secure initialization routines (optional: Secure Boot).
@@ -48,10 +43,9 @@ This document outlines the key features and implementation roadmap for memory pr
 - Simulate error conditions and analyze fault recovery
 - Execute full protection chain:
   1. Activate RDP Level 1
-  2. Enable PCROP for sensitive code
-  3. Lock flash sectors with WRP
-  4. Store keys in OTP with `LOCKBi`
-  5. Run key operations securely
+  2. Lock flash sectors with WRP
+  3. Store keys in OTP with `LOCKBi`
+  4. Run key operations securely
 
 ---
 

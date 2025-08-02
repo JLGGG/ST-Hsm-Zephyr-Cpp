@@ -154,8 +154,9 @@ int main(void)
   }
   HAL_UART_Transmit(&huart2, (uint8_t *)Computed_Ciphertext, computed_size, HAL_MAX_DELAY);
 
+  /* HSM CODE START */
   // setRDPLevelOne();
-  setBORLevelThree();
+  /* HSM CODE END */
   /* USER CODE END 2 */
 
   /* Infinite loop */

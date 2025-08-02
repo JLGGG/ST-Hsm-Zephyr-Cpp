@@ -5,6 +5,5 @@
 
 RetStatus setRDPLevelOne();
 RetStatus setRDPLevelTwo();
-RetStatus setBORLevelThree();
 
 #endif // HSM_MEMORY_PROTECTION
