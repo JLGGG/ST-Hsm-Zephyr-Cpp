@@ -61,3 +61,59 @@ RetStatus setRDPLevelTwo()
     return RET_OK;
 }
 #endif
+
+uint32_t enableWRP(uint32_t wrp_sectors)
+{
+    FLASH_OBProgramInitTypeDef ob_init;
+    uint32_t status = HAL_FLASH_ERROR_NONE;
+
+    HAL_FLASH_Unlock();
+    HAL_FLASH_OB_Unlock();
+
+    ob_init.OptionType = OPTIONBYTE_WRP;
+    ob_init.WRPState   = OB_WRPSTATE_ENABLE;
+    ob_init.WRPSector  = wrp_sectors;
+    ob_init.Banks      = FLASH_BANK_1;
+
+    if (HAL_FLASHEx_OBProgram(&ob_init) != HAL_OK)
+    {
+        status = HAL_FLASH_GetError();
+    }
+    else
+    {
+        HAL_FLASH_OB_Launch();
+    }
+
+    HAL_FLASH_OB_Lock();
+    HAL_FLASH_Lock();
+
+    return status;
+}
+
+uint32_t disableWRP(uint32_t wrp_sectors)
+{
+    FLASH_OBProgramInitTypeDef ob_init;
+    uint32_t status = HAL_FLASH_ERROR_NONE;
+
+    HAL_FLASH_Unlock();
+    HAL_FLASH_OB_Unlock();
+
+    ob_init.OptionType = OPTIONBYTE_WRP;
+    ob_init.WRPState   = OB_WRPSTATE_DISABLE;
+    ob_init.WRPSector  = wrp_sectors;
+    ob_init.Banks      = FLASH_BANK_1;
+
+    if (HAL_FLASHEx_OBProgram(&ob_init) != HAL_OK)
+    {
+        status = HAL_FLASH_GetError();
+    }
+    else
+    {
+        HAL_FLASH_OB_Launch();
+    }
+
+    HAL_FLASH_OB_Lock();
+    HAL_FLASH_Lock();
+
+    return status;
+}
