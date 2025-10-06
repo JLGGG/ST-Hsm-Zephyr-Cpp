@@ -3,7 +3,7 @@
 ----
 
 ### Description:
-This project aims to implement an HSM on an ST MCU and eventually adapt Federated Learning (FL) to run on it. The HSM provides a secure environment for storing key pairs and offering cryptographic libraries. FL is designed to utilize the HSM to protect local data during decentralized training. Therefore, the roadmap below outlines the necessary steps to achieve these goals. 
+This project aims to implement an HSM on an ST MCU. The HSM provides a secure environment for storing key pairs and offering cryptographic libraries. The roadmap below outlines the steps.
 
 ---
 
@@ -12,13 +12,12 @@ This project aims to implement an HSM on an ST MCU and eventually adapt Federate
 |------|-------------|
 | 1. Implement MPU | Apply memory protection for secure storage. |
 | 2. Implement Key Management | Manage and securely store cryptographic keys. |
-| 3. Implement Secure Boot | Verify boot firmware integrity during startup. |
+| 3. Implement Secure Boot | Verify boot firmware integrity during boot time. |
 | 4. Implement Secure Debug | Restrict access to the debug port. |
 | 5. Implement Secure Flash (FW update) | Allow firmware updates only from authenticated sources. |
 | 6. Implement Secure Lock | Lock memory to prevent tampering or exploitation. |
 | 7. Port Zephyr | Port the implemented HSM onto the Zephyr RTOS platform. |
 | 8. Abstract HSM using C++ | Build an abstraction layer in C++ to interface with the HSM. |
-| 9. Implement Basic FL | Use the HSM to protect local data in Federated Learning. |
 
 ---
 
