@@ -2,6 +2,7 @@
 .cproject
 .mxproject
 .project
+.metadata
 ST-Hsm-Zephyr-Cpp Debug.*
 ST-Hsm-Zephyr-Cpp.ioc
 STM32F407VGTX_FLASH.ld

@@ -1,9 +1,13 @@
-#ifndef HSM_MEMORY_PROTECTION
-#define HSM_MEMORY_PROTECTION
+#ifndef HSM_OPTION_BYTE_H
+#define HSM_OPTION_BYTE_H
 
 #include "hsm_type.h"
 
-RetStatus setRDPLevelOne();
-RetStatus setRDPLevelTwo();
+RetStatus setRDPLevelOne(void);
+#if defined(ENABLE_RDP_LEVEL_TWO)
+RetStatus setRDPLevelTwo(void);
+#endif
+uint32_t enableWRP(uint32_t wrp_sectors);
+uint32_t disableWRP(uint32_t wrp_sectors);
 
-#endif // HSM_MEMORY_PROTECTION
+#endif // HSM_OPTION_BYTE_H
