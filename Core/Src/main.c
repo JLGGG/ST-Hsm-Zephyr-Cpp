@@ -96,7 +96,7 @@ int main(void)
   printf("\r\n=== HSM System Started ===\r\n");
 
   hsm_test_aes_cbc();
-  // hsm_test_wrp();
+  hsm_test_wrp();
   /* USER CODE END 2 */
 
   /* Infinite loop */
